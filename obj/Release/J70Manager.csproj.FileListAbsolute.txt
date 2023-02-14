@@ -1,0 +1,11 @@
+C:\Users\James pc\Desktop\J70Manager\J70Manager\bin\Release\J70Manager.exe.config
+C:\Users\James pc\Desktop\J70Manager\J70Manager\bin\Release\J70Manager.exe
+C:\Users\James pc\Desktop\J70Manager\J70Manager\bin\Release\J70Manager.pdb
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.csproj.AssemblyReference.cache
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.csproj.SuggestedBindingRedirects.cache
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.Form1.resources
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.Properties.Resources.resources
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.csproj.GenerateResource.cache
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.csproj.CoreCompileInputs.cache
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.exe
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Release\J70Manager.pdb

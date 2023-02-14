@@ -9,3 +9,5 @@ C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.csproj.Gene
 C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.csproj.CoreCompileInputs.cache
 C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.exe
 C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.pdb
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.Home.resources
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.GalleryGenerator.resources

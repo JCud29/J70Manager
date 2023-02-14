@@ -63,6 +63,16 @@ namespace J70Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap homeIcon {
+            get {
+                object obj = ResourceManager.GetObject("homeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap htmlicon {
             get {
                 object obj = ResourceManager.GetObject("htmlicon", resourceCulture);
