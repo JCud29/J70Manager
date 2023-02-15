@@ -16,5 +16,13 @@ namespace J70Manager.Forms
         {
             InitializeComponent();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            var logoWidth = PBLogo.Width;
+            var formWidth = this.Width;
+            var logoPos = formWidth / 2 - (logoWidth / 2);
+            PBLogo.Left = logoPos;
+        }
     }
 }

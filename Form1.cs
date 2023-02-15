@@ -20,6 +20,11 @@ namespace J70Manager
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            BtnHome.PerformClick();
+        }
+
         private void HighlightButton(object btnSender)
         {
             if (btnSender != null)
@@ -50,6 +55,8 @@ namespace J70Manager
             }
         }
 
+        
+
         private void OpenChildForm(Form child, object btnSender)
         {
             if(currentForm != null)
@@ -66,7 +73,7 @@ namespace J70Manager
             LabelTitle.Text = child.Text;
             var labelWidth = LabelTitle.Width;
             var formWidth = this.Width;
-            var labelPos = (formWidth/2) - (labelWidth/2) - 125;
+            var labelPos = (formWidth-250)/2 - (labelWidth/2);
             LabelTitle.Left = labelPos;
         }
 
@@ -79,5 +86,7 @@ namespace J70Manager
         {
             OpenChildForm(new Forms.GalleryGenerator(), sender);
         }
+
+        
     }
 }
