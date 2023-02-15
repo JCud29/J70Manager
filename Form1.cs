@@ -87,6 +87,24 @@ namespace J70Manager
             OpenChildForm(new Forms.GalleryGenerator(), sender);
         }
 
-        
+        private void BtnImageGen_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.ImageCode(), sender);
+        }
+
+        private void BtnImageTranslator_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.ImageCodeTranslator(), sender);
+        }
+
+        private void BtnKeyword_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.Keywords(), sender);
+        }
+
+        private void BtnEditKeyword_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.EditKeywords(), sender);
+        }
     }
 }

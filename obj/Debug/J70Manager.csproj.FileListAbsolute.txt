@@ -11,3 +11,6 @@ C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.exe
 C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.pdb
 C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.Home.resources
 C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.GalleryGenerator.resources
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.EditKeywords.resources
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.ImageCode.resources
+C:\Users\James pc\Desktop\J70Manager\J70Manager\obj\Debug\J70Manager.Forms.ImageCodeTranslator.resources

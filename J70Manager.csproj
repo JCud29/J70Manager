@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditKeywords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditKeywords.Designer.cs">
+      <DependentUpon>EditKeywords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GalleryGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +70,43 @@
     <Compile Include="Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ImageCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageCode.Designer.cs">
+      <DependentUpon>ImageCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageCodeTranslator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageCodeTranslator.Designer.cs">
+      <DependentUpon>ImageCodeTranslator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Keywords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Keywords.Designer.cs">
+      <DependentUpon>Keywords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditKeywords.resx">
+      <DependentUpon>EditKeywords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GalleryGenerator.resx">
       <DependentUpon>GalleryGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCode.resx">
+      <DependentUpon>ImageCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCodeTranslator.resx">
+      <DependentUpon>ImageCodeTranslator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,6 +139,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\homeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\convert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keywords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
