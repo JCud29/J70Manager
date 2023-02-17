@@ -59,7 +59,7 @@ namespace J70Manager
 
         private void OpenChildForm(Form child, object btnSender)
         {
-            if(currentForm != null)
+            if (currentForm != null)
                 currentForm.Close();
             HighlightButton(btnSender);
             currentForm = child;
