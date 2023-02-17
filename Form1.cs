@@ -47,7 +47,7 @@ namespace J70Manager
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 51);
+                    previousBtn.BackColor = Color.FromArgb(45, 45, 45);
                     previousBtn.ForeColor = Color.FromArgb(242, 242, 242);
                     previousBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     
