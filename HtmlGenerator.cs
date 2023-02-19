@@ -46,6 +46,9 @@ namespace J70Manager
             }
 
             file.AddRange(HtmlPart3);
+
+            FileClient.CreateHtmlFile(file, Title);
+
             return 0;
         }
 

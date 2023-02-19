@@ -21,5 +21,20 @@ namespace J70Manager
                 return new List<string>();
             }
         }
+
+        public void CreateHtmlFile(List<string> file, string title) {
+            using (FileStream fs = new FileStream("..\\..\\"+title +".html", FileMode.Create))
+            {
+                using (StreamWriter Writer = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    foreach (string line in file)
+                    {
+                        Writer.WriteLine(line);
+                    }
+                }
+            }
+
+
+        }
     }
 }

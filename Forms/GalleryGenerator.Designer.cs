@@ -68,7 +68,7 @@
             this.LblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.LblTitle.Location = new System.Drawing.Point(72, 50);
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(116, 22);
+            this.LblTitle.Size = new System.Drawing.Size(111, 22);
             this.LblTitle.TabIndex = 1;
             this.LblTitle.Text = "Gallery Title";
             // 
@@ -110,6 +110,7 @@
             this.BtnGenerate.TabIndex = 4;
             this.BtnGenerate.Text = "Generate Gallery";
             this.BtnGenerate.UseVisualStyleBackColor = false;
+            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // LblFileName
             // 
@@ -133,6 +134,8 @@
             this.TBFileName.Size = new System.Drawing.Size(400, 30);
             this.TBFileName.TabIndex = 5;
             this.TBFileName.Text = "Base File Name";
+            this.TBFileName.Enter += new System.EventHandler(this.TBFileName_Enter);
+            this.TBFileName.Leave += new System.EventHandler(this.TBFileName_Leave);
             // 
             // LblStart
             // 
@@ -178,6 +181,8 @@
             this.TBLocation.Size = new System.Drawing.Size(400, 30);
             this.TBLocation.TabIndex = 11;
             this.TBLocation.Text = "Photo Location";
+            this.TBLocation.Enter += new System.EventHandler(this.TBLocation_Enter);
+            this.TBLocation.Leave += new System.EventHandler(this.TBLocation_Leave);
             // 
             // LblOutput
             // 
@@ -193,14 +198,15 @@
             // TBOutput
             // 
             this.TBOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.TBOutput.Enabled = false;
             this.TBOutput.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBOutput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBOutput.Location = new System.Drawing.Point(67, 487);
             this.TBOutput.Name = "TBOutput";
+            this.TBOutput.ReadOnly = true;
             this.TBOutput.ShortcutsEnabled = false;
             this.TBOutput.Size = new System.Drawing.Size(909, 30);
             this.TBOutput.TabIndex = 13;
-            this.TBOutput.Text = "Output Location";
             // 
             // NumStart
             // 
