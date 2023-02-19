@@ -23,8 +23,7 @@ namespace J70Manager.Forms
         {
             TBTitle.Text = " Place Holder text...";
             TBDescription.Text = " Place Holder text...";
-            HtmlClient.GenerateFile();
-
+            HtmlClient.GenerateFile(TBTitle.Text, TBDescription.Text, Convert.ToInt32(NumStart.Value), Convert.ToInt32(NumEnd.Value), TBFileName.Text, TBLocation.Text);
         }
 
         private void TBTitle_Enter(object sender, EventArgs e)
