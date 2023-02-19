@@ -89,7 +89,7 @@
     <Compile Include="Forms\Keywords.Designer.cs">
       <DependentUpon>Keywords.cs</DependentUpon>
     </Compile>
-    <Compile Include="GalleryGenerator.cs" />
+    <Compile Include="HtmlGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -153,6 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="J70GalleryPart2.txt" />
+    <Content Include="J70GalleryPart1.txt" />
+    <Content Include="J70GalleryPart3.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

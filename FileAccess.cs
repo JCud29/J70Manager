@@ -12,10 +12,14 @@ namespace J70Manager
         public FileAccess() { }
 
         public List<string> ReadTextFile(string URL) {
-            List<string> lines = new List<string>();
-            lines = File.ReadAllLines(URL).ToList<string>();
-
-            return new List<string>();
+            try
+            {
+                return File.ReadAllLines(URL).ToList<string>();
+            }
+            catch (Exception e)
+            {
+                return new List<string>();
+            }
         }
     }
 }

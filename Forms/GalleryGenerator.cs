@@ -13,6 +13,7 @@ namespace J70Manager.Forms
 {
     public partial class GalleryGenerator : Form
     {
+        private HtmlGenerator HtmlClient = new HtmlGenerator();
         public GalleryGenerator()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace J70Manager.Forms
         {
             TBTitle.Text = " Place Holder text...";
             TBDescription.Text = " Place Holder text...";
+            HtmlClient.GenerateFile();
 
         }
 
