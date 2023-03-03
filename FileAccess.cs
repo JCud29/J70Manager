@@ -22,6 +22,28 @@ namespace J70Manager
             }
         }
 
+        public int WriteToTextFile(string url, List<string> lines) {
+            try
+            {
+                using (FileStream fs = new FileStream(url, FileMode.Create))
+                {
+                    using (StreamWriter Writer = new StreamWriter(fs, Encoding.UTF8))
+                    {
+                        foreach (string line in lines)
+                        {
+                            Writer.WriteLine(line);
+                        }
+                    }
+                }
+                return 0;
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+            
+        }
+
         public void CreateHtmlFile(List<string> file, string title) {
             using (FileStream fs = new FileStream("..\\..\\"+title +".html", FileMode.Create))
             {

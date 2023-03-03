@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace J70Manager.Forms
 {
@@ -15,10 +16,12 @@ namespace J70Manager.Forms
     {
         private FileAccess fileClient;
         private string UrlCodes = "..\\..\\PreviousCodes.txt";
+        List<string> codes; 
         public ImageCode()
         {
             InitializeComponent();
             fileClient = new FileAccess();
+            codes = new List<string>();
         }
 
         private void ImageCode_Load(object sender, EventArgs e)
@@ -28,32 +31,58 @@ namespace J70Manager.Forms
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-            bool valid = ValidationCheck();
+            bool valid = IsValid();
             if (valid)
             {
-                string championship = DropChampionship.SelectedValue.ToString();
-                string track = DropTrack.SelectedValue.ToString();
-                string month = DropMonth.SelectedValue.ToString();
-                string year = DropYear.SelectedValue.ToString();
-                string imageNumber = TBImage.Text;
-
-                System.Text.StringBuilder codeBuilder = new System.Text.StringBuilder(championship);
-                codeBuilder.Append(track).Append(month).Append(year).Append(imageNumber);
-                string imageCode = codeBuilder.ToString();
-                
+                string imageCode = GenerateCode();
                 TBCode.Text = imageCode;
+
+                AddCodeToPrevious(imageCode);
+
             }
 
         }
 
-        private bool ValidationCheck()
+        private string GenerateCode()
+        {
+            string championship = DropChampionship.SelectedValue.ToString();
+            string track = DropTrack.SelectedValue.ToString();
+            string month = DropMonth.SelectedValue.ToString();
+            string year = DropYear.SelectedValue.ToString();
+            string imageNumber = TBImage.Text;
+
+            StringBuilder codeBuilder = new StringBuilder(championship);
+            codeBuilder.Append(track).Append(month).Append(year).Append(imageNumber);
+
+            return codeBuilder.ToString(); ;
+        }
+
+        private void AddCodeToPrevious(string generatedCode) 
+        {
+            StringBuilder previousBuilder = new StringBuilder(generatedCode);
+            previousBuilder.Append(" - " ).Append(DropChampionship.Text).Append(", ").Append(DropTrack.Text);
+            string abrMonth = DropMonth.Text.Substring(0,3);
+            string abrYear = DropYear.Text.Substring(2);
+            previousBuilder.Append(", ").Append(abrMonth).Append(", ").Append(abrYear);
+
+            codes.Insert(0, previousBuilder.ToString());
+            LBPrevious.Items.Insert(0, previousBuilder.ToString());
+
+            int successCode = fileClient.WriteToTextFile(UrlCodes, codes);
+            if(successCode == -1)
+                MessageBox.Show("Unable to write to file, Code not saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+        }
+
+        private bool IsValid()
         {
             bool valid = false;
             if (string.IsNullOrEmpty(TBImage.Text.Trim()))
                 valid = true;
             else
             {
-                valid = IsValid(TBImage.Text.Trim());
+                valid = validImage(TBImage.Text.Trim());
                 if (!valid)
                 {
                     TBImage.ForeColor = Color.Red;
@@ -141,11 +170,14 @@ namespace J70Manager.Forms
 
         private void LoadPreviousCodes()
         {
-            List<string> codes = fileClient.ReadTextFile(UrlCodes);
-            LBPrevious.DataSource = codes;
+            LBPrevious.Items.Clear();
+            codes = fileClient.ReadTextFile(UrlCodes);
+            foreach(string code in codes)
+                LBPrevious.Items.Add(code);
+            
         }
 
-        private bool IsValid(string image)
+        private bool validImage(string image)
         {
             foreach (char c in image)
             {
