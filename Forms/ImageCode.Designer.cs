@@ -217,6 +217,7 @@
             this.TBCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBCode.Location = new System.Drawing.Point(493, 251);
             this.TBCode.Name = "TBCode";
+            this.TBCode.ReadOnly = true;
             this.TBCode.Size = new System.Drawing.Size(299, 30);
             this.TBCode.TabIndex = 12;
             // 

@@ -31,7 +31,17 @@ namespace J70Manager.Forms
             bool valid = ValidationCheck();
             if (valid)
             {
-                string image = TBImage.Text;
+                string championship = DropChampionship.SelectedValue.ToString();
+                string track = DropTrack.SelectedValue.ToString();
+                string month = DropMonth.SelectedValue.ToString();
+                string year = DropYear.SelectedValue.ToString();
+                string imageNumber = TBImage.Text;
+
+                System.Text.StringBuilder codeBuilder = new System.Text.StringBuilder(championship);
+                codeBuilder.Append(track).Append(month).Append(year).Append(imageNumber);
+                string imageCode = codeBuilder.ToString();
+                
+                TBCode.Text = imageCode;
             }
 
         }
