@@ -259,13 +259,32 @@
             // LBPrevious
             // 
             this.LBPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.LBPrevious.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBPrevious.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.LBPrevious.FormattingEnabled = true;
-            this.LBPrevious.ItemHeight = 21;
+            this.LBPrevious.ItemHeight = 23;
+            this.LBPrevious.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18"});
             this.LBPrevious.Location = new System.Drawing.Point(861, 85);
             this.LBPrevious.Name = "LBPrevious";
-            this.LBPrevious.Size = new System.Drawing.Size(439, 424);
+            this.LBPrevious.Size = new System.Drawing.Size(439, 418);
             this.LBPrevious.TabIndex = 15;
             // 
             // ImageCode
@@ -291,6 +310,7 @@
             this.Controls.Add(this.DropChampionship);
             this.Name = "ImageCode";
             this.Text = "Image Code Generator";
+            this.Load += new System.EventHandler(this.ImageCode_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

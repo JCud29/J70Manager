@@ -13,10 +13,11 @@ namespace J70Manager.Forms
 {
     public partial class GalleryGenerator : Form
     {
-        private HtmlGenerator HtmlClient = new HtmlGenerator();
+        private HtmlGenerator HtmlClient;
         public GalleryGenerator()
         {
             InitializeComponent();
+            HtmlClient = new HtmlGenerator();
         }
 
         private void GalleryGenerator_Load(object sender, EventArgs e)

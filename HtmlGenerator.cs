@@ -38,7 +38,7 @@ namespace J70Manager
             file.Add("<p>" + Description + "</p>");
             file.AddRange(HtmlPart2);
 
-            for (int i = startRange; i < endRange; i++)
+            for (int i = startRange; i <= endRange; i++)
             {
                 file.Add("<div class=\"grid - item\">");
                 file.Add("<img src = \"Assets/images/" + Location + "/" + baseFileName + i.ToString() + ".jpg\" alt = \"\"/>");

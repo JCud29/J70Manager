@@ -17,6 +17,9 @@ namespace J70Manager.Forms
             InitializeComponent();
         }
 
-        
+        private void ImageCode_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
