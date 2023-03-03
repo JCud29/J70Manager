@@ -38,8 +38,8 @@
             this.DropYear = new System.Windows.Forms.ComboBox();
             this.LblImage = new System.Windows.Forms.Label();
             this.TBImage = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TBCode = new System.Windows.Forms.TextBox();
+            this.LblCode = new System.Windows.Forms.Label();
             this.BtnGenerate = new System.Windows.Forms.Button();
             this.LblPrevious = new System.Windows.Forms.Label();
             this.LBPrevious = new System.Windows.Forms.ListBox();
@@ -210,26 +210,26 @@
             this.TBImage.Size = new System.Drawing.Size(299, 30);
             this.TBImage.TabIndex = 10;
             // 
-            // textBox1
+            // TBCode
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBox1.Location = new System.Drawing.Point(493, 251);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(299, 30);
-            this.textBox1.TabIndex = 12;
+            this.TBCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.TBCode.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.TBCode.Location = new System.Drawing.Point(493, 251);
+            this.TBCode.Name = "TBCode";
+            this.TBCode.Size = new System.Drawing.Size(299, 30);
+            this.TBCode.TabIndex = 12;
             // 
-            // label1
+            // LblCode
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(489, 226);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 22);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Image Number";
+            this.LblCode.AutoSize = true;
+            this.LblCode.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.LblCode.Location = new System.Drawing.Point(489, 226);
+            this.LblCode.Name = "LblCode";
+            this.LblCode.Size = new System.Drawing.Size(123, 22);
+            this.LblCode.TabIndex = 11;
+            this.LblCode.Text = "Image Code";
             // 
             // BtnGenerate
             // 
@@ -244,6 +244,7 @@
             this.BtnGenerate.TabIndex = 13;
             this.BtnGenerate.Text = "Generate Image Code";
             this.BtnGenerate.UseVisualStyleBackColor = false;
+            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // LblPrevious
             // 
@@ -296,8 +297,8 @@
             this.Controls.Add(this.LBPrevious);
             this.Controls.Add(this.LblPrevious);
             this.Controls.Add(this.BtnGenerate);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TBCode);
+            this.Controls.Add(this.LblCode);
             this.Controls.Add(this.TBImage);
             this.Controls.Add(this.LblImage);
             this.Controls.Add(this.LblYear);
@@ -328,8 +329,8 @@
         private System.Windows.Forms.ComboBox DropYear;
         private System.Windows.Forms.Label LblImage;
         private System.Windows.Forms.TextBox TBImage;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TBCode;
+        private System.Windows.Forms.Label LblCode;
         private System.Windows.Forms.Button BtnGenerate;
         private System.Windows.Forms.Label LblPrevious;
         private System.Windows.Forms.ListBox LBPrevious;

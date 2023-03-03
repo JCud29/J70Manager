@@ -158,6 +158,7 @@
     <Content Include="J70GalleryPart2.txt" />
     <Content Include="J70GalleryPart1.txt" />
     <Content Include="J70GalleryPart3.txt" />
+    <Content Include="PreviousCodes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

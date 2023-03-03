@@ -76,7 +76,7 @@ namespace J70Manager.Forms
                 TBLocation.Text = " Place Holder text...";
         }
 
-        private bool isEmpty()
+        private bool IsEmpty()
         {
             bool empty = false;
             if(string.IsNullOrEmpty(TBTitle.Text.Trim()) || TBTitle.Text == " Place Holder text...")
@@ -107,7 +107,7 @@ namespace J70Manager.Forms
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-            bool empty = isEmpty();
+            bool empty = IsEmpty();
             bool valid = true;
             if (NumEnd.Value < NumStart.Value)
             {
