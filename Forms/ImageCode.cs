@@ -65,7 +65,9 @@ namespace J70Manager.Forms
             string abrYear = DropYear.Text.Substring(2);
             previousBuilder.Append(", ").Append(abrMonth).Append(", ").Append(abrYear);
 
+            codes.RemoveAt(17);
             codes.Insert(0, previousBuilder.ToString());
+            LBPrevious.Items.RemoveAt(17);
             LBPrevious.Items.Insert(0, previousBuilder.ToString());
 
             int successCode = fileClient.WriteToTextFile(UrlCodes, codes);
@@ -172,8 +174,12 @@ namespace J70Manager.Forms
         {
             LBPrevious.Items.Clear();
             codes = fileClient.ReadTextFile(UrlCodes);
+            //remove codes if the size of the list is above the limit of 18
+            while (codes.Count > 18)
+                codes.RemoveAt(18);
             foreach(string code in codes)
                 LBPrevious.Items.Add(code);
+            
             
         }
 
