@@ -1,132 +1,141 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace J70Manager.Forms
 {
-    public partial class GalleryGenerator : Form
-    {
-        private HtmlGenerator HtmlClient = new HtmlGenerator();
-        public GalleryGenerator()
-        {
-            InitializeComponent();
-        }
+	public partial class GalleryGenerator : Form
+	{
+		private readonly HtmlGenerator _htmlGenerator = new HtmlGenerator();
+		private readonly List<TextBox> _textBoxes = new List<TextBox>();
+		private const string PLACEHOLDER_TEXT = " Placeholder text...";
 
-        private void GalleryGenerator_Load(object sender, EventArgs e)
-        {
-            TBTitle.Text = " Place Holder text...";
-            TBDescription.Text = " Place Holder text...";
-            TBFileName.Text = " Place Holder text...";
-            TBLocation.Text = " Place Holder text...";
-        }
+		public GalleryGenerator()
+		{
+			InitializeComponent();
+		}
 
-        private void TBTitle_Enter(object sender, EventArgs e)
-        {
-            if (TBTitle.Text == " Place Holder text...")
-                TBTitle.Text = "";
-        }
+		private void GalleryGenerator_Load(object sender, EventArgs e)
+		{
+			_textBoxes.AddRange(new List<TextBox>()
+			{
+				TBTitle,
+				TBDescription,
+				TBFileName,
+				TBLocation
+			});
 
-        private void TBTitle_Leave(object sender, EventArgs e)
-        {
-            if (TBTitle.Text == "")
-                TBTitle.Text = " Place Holder text...";
-        }
+			TBTitle.Text = PLACEHOLDER_TEXT;
+			TBDescription.Text = PLACEHOLDER_TEXT;
+			TBFileName.Text = PLACEHOLDER_TEXT;
+			TBLocation.Text = PLACEHOLDER_TEXT;
+		}
 
-        private void TBDescription_Enter(object sender, EventArgs e)
-        {
-            if (TBDescription.Text == " Place Holder text...")
-                TBDescription.Text = "";
-        }
+		private void TBTitle_Enter(object sender, EventArgs e)
+		{
+			if (TBTitle.Text == PLACEHOLDER_TEXT)
+			{
+				TBTitle.Text = "";
+			}
+		}
 
-        private void TBDescription_Leave(object sender, EventArgs e)
-        {
-            if (TBDescription.Text == "")
-                TBDescription.Text = " Place Holder text...";
-        }
+		private void TBTitle_Leave(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(TBTitle.Text))
+			{
+				TBTitle.Text = PLACEHOLDER_TEXT;
+			}
+		}
 
-        private void TBFileName_Enter(object sender, EventArgs e)
-        {
-            if (TBFileName.Text == " Place Holder text...")
-                TBFileName.Text = "";
-        }
+		private void TBDescription_Enter(object sender, EventArgs e)
+		{
+			if (TBDescription.Text == PLACEHOLDER_TEXT)
+			{
+				TBDescription.Text = "";
+			}
+		}
 
-        private void TBFileName_Leave(object sender, EventArgs e)
-        {
-            if (TBFileName.Text == "")
-                TBFileName.Text = " Place Holder text...";
-        }
+		private void TBDescription_Leave(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(TBDescription.Text))
+			{
+				TBDescription.Text = PLACEHOLDER_TEXT;
+			}
+		}
 
-        private void TBLocation_Enter(object sender, EventArgs e)
-        {
-            if (TBLocation.Text == " Place Holder text...")
-                TBLocation.Text = "";
-        }
+		private void TBFileName_Enter(object sender, EventArgs e)
+		{
+			if (TBFileName.Text == PLACEHOLDER_TEXT)
+				TBFileName.Text = "";
+		}
 
-        private void TBLocation_Leave(object sender, EventArgs e)
-        {
-            if (TBLocation.Text == "")
-                TBLocation.Text = " Place Holder text...";
-        }
+		private void TBFileName_Leave(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(TBFileName.Text))
+			{
+				TBFileName.Text = PLACEHOLDER_TEXT;
+			}
+		}
 
-        private bool isEmpty()
-        {
-            bool empty = false;
-            if(string.IsNullOrEmpty(TBTitle.Text.Trim()) || TBTitle.Text == " Place Holder text...")
-            {
-                empty = true;
-                TBTitle.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrEmpty(TBDescription.Text.Trim()) || TBDescription.Text == " Place Holder text...")
-            {
-                empty = true;
-                TBDescription.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrEmpty(TBFileName.Text.Trim()) || TBFileName.Text == " Place Holder text...")
-            {
-                empty = true;
-                TBFileName.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrEmpty(TBLocation.Text.Trim()) || TBLocation.Text == " Place Holder text...")
-            {
-                empty = true;
-                TBLocation.ForeColor = Color.Red;
-            }
-            if (empty)
-                MessageBox.Show("These fields are required", "Invalid Inputs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+		private void TBLocation_Enter(object sender, EventArgs e)
+		{
+			if (TBLocation.Text == PLACEHOLDER_TEXT)
+			{
+				TBLocation.Text = "";
+			}
+		}
 
-            return empty;
-        }
+		private void TBLocation_Leave(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(TBLocation.Text))
+			{
+				TBLocation.Text = PLACEHOLDER_TEXT;
+			}
+		}
 
-        private void BtnGenerate_Click(object sender, EventArgs e)
-        {
-            bool empty = isEmpty();
-            bool valid = true;
-            if (NumEnd.Value < NumStart.Value)
-            {
-                valid = false;
-                MessageBox.Show("End Range can't be larger than Start Range", "Invalid Inputs", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (valid && !empty)
-            {
-                int success = HtmlClient.GenerateFile(TBTitle.Text, TBDescription.Text, Convert.ToInt32(NumStart.Value), Convert.ToInt32(NumEnd.Value), TBFileName.Text, TBLocation.Text);
-                if (success == 0) {
-                    TBOutput.Enabled = true;
-                    TBOutput.Text = TBTitle.Text + "- File Created";
-                }
-                else
-                {
-                    MessageBox.Show("File not created, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
-            }
-            
-        }
-    }
+		private bool FieldsEmpty()
+		{
+			bool containsInvalidFields = false;
+			foreach (TextBox textBox in _textBoxes)
+			{
+				if (string.IsNullOrWhiteSpace(textBox.Text.Trim()) || textBox.Text == PLACEHOLDER_TEXT)
+				{
+					containsInvalidFields = true;
+					textBox.ForeColor = Color.Red;
+				}
+			}
+
+			if (containsInvalidFields)
+			{
+				MessageBox.Show("These fields are required", "Invalid Inputs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
+			return containsInvalidFields;
+		}
+
+		private void BtnGenerate_Click(object sender, EventArgs e)
+		{
+			bool empty = FieldsEmpty();
+			bool valid = true;
+			if (NumEnd.Value < NumStart.Value)
+			{
+				valid = false;
+				MessageBox.Show("End Range can't be larger than Start Range", "Invalid Inputs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			if (valid && !empty)
+			{
+				int success = _htmlGenerator.GenerateFile(TBTitle.Text, TBDescription.Text, Convert.ToInt32(NumStart.Value), Convert.ToInt32(NumEnd.Value), TBFileName.Text, TBLocation.Text);
+				if (success == 0)
+				{
+					TBOutput.Enabled = true;
+					TBOutput.Text = TBTitle.Text + "- File Created";
+				}
+				else
+				{
+					MessageBox.Show("File not created, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
+	}
 }
