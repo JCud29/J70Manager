@@ -16,5 +16,7 @@ namespace J70Manager.Forms
         {
             InitializeComponent();
         }
+
+      
     }
 }

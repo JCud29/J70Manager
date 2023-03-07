@@ -16,7 +16,7 @@ namespace J70Manager.Forms
     {
         private readonly FileAccess _fileClient = new FileAccess();
         private readonly string _codesUrl = "..\\..\\PreviousCodes.txt";
-        private readonly List<string> codes = new List<string>();
+        private List<string> _previousCodes = new List<string>();
         public ImageCode()
         {
             InitializeComponent();
@@ -63,12 +63,12 @@ namespace J70Manager.Forms
             string abrYear = DropYear.Text.Substring(2);
             previousBuilder.Append(", ").Append(abrMonth).Append(", ").Append(abrYear);
 
-            codes.RemoveAt(17);
-            codes.Insert(0, previousBuilder.ToString());
+            _previousCodes.RemoveAt(17);
+            _previousCodes.Insert(0, previousBuilder.ToString());
             LBPrevious.Items.RemoveAt(17);
             LBPrevious.Items.Insert(0, previousBuilder.ToString());
 
-            int successCode = _fileClient.WriteToTextFile(_codesUrl, codes);
+            int successCode = _fileClient.WriteToTextFile(_codesUrl, _previousCodes);
             if(successCode == -1)
                 MessageBox.Show("Unable to write to file, Code not saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -171,11 +171,11 @@ namespace J70Manager.Forms
         private void LoadPreviousCodes()
         {
             LBPrevious.Items.Clear();
-            codes = _fileClient.ReadTextFile(_codesUrl);
+            _previousCodes = _fileClient.ReadTextFile(_codesUrl);
             //remove codes if the size of the list is above the limit of 18
-            while (codes.Count > 18)
-                codes.RemoveAt(18);
-            foreach(string code in codes)
+            while (_previousCodes.Count > 18)
+                _previousCodes.RemoveAt(18);
+            foreach(string code in _previousCodes)
                 LBPrevious.Items.Add(code);
             
             
