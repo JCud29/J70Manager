@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace J70Manager
 {
@@ -14,9 +13,9 @@ namespace J70Manager
         public List<string> ReadTextFile(string URL) {
             try
             {
-                return File.ReadAllLines(URL).ToList<string>();
+                return File.ReadAllLines(URL).ToList();
             }
-            catch (Exception e)
+            catch
             {
                 return new List<string>();
             }
@@ -37,7 +36,7 @@ namespace J70Manager
                 }
                 return 0;
             }
-            catch (Exception e)
+            catch
             {
                 return -1;
             }

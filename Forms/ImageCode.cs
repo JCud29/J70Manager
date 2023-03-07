@@ -14,14 +14,12 @@ namespace J70Manager.Forms
 {
     public partial class ImageCode : Form
     {
-        private FileAccess fileClient;
-        private string UrlCodes = "..\\..\\PreviousCodes.txt";
-        List<string> codes; 
+        private readonly FileAccess _fileClient = new FileAccess();
+        private readonly string _codesUrl = "..\\..\\PreviousCodes.txt";
+        private readonly List<string> codes = new List<string>();
         public ImageCode()
         {
             InitializeComponent();
-            fileClient = new FileAccess();
-            codes = new List<string>();
         }
 
         private void ImageCode_Load(object sender, EventArgs e)
@@ -70,7 +68,7 @@ namespace J70Manager.Forms
             LBPrevious.Items.RemoveAt(17);
             LBPrevious.Items.Insert(0, previousBuilder.ToString());
 
-            int successCode = fileClient.WriteToTextFile(UrlCodes, codes);
+            int successCode = _fileClient.WriteToTextFile(_codesUrl, codes);
             if(successCode == -1)
                 MessageBox.Show("Unable to write to file, Code not saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -80,7 +78,7 @@ namespace J70Manager.Forms
         private bool IsValid()
         {
             bool valid = false;
-            if (string.IsNullOrEmpty(TBImage.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(TBImage.Text.Trim()))
                 valid = true;
             else
             {
@@ -173,7 +171,7 @@ namespace J70Manager.Forms
         private void LoadPreviousCodes()
         {
             LBPrevious.Items.Clear();
-            codes = fileClient.ReadTextFile(UrlCodes);
+            codes = _fileClient.ReadTextFile(_codesUrl);
             //remove codes if the size of the list is above the limit of 18
             while (codes.Count > 18)
                 codes.RemoveAt(18);
