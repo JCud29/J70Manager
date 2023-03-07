@@ -83,10 +83,9 @@
             this.LblPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.LblPrevious.Location = new System.Drawing.Point(834, 45);
             this.LblPrevious.Name = "LblPrevious";
-            this.LblPrevious.Size = new System.Drawing.Size(248, 22);
+            this.LblPrevious.Size = new System.Drawing.Size(146, 22);
             this.LblPrevious.TabIndex = 29;
-            this.LblPrevious.Text = "Previous Codes Generated";
-            
+            this.LblPrevious.Text = "Previous Codes";
             // 
             // BtnGenerate
             // 
@@ -253,6 +252,7 @@
             this.Controls.Add(this.LblChampionship);
             this.Name = "ImageCodeTranslator";
             this.Text = "Image Code Translator";
+            this.Load += new System.EventHandler(this.ImageCodeTranslator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
