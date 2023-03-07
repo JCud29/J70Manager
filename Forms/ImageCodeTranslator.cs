@@ -94,7 +94,8 @@ namespace J70Manager.Forms
             string trackCode = code.Substring(1, 1);
             string monthCode = code.Substring(2, 1).ToUpper();
             string yearCode = code.Substring(3, 2);
-            string[] result = new string[4]; // I would make this a model like
+            resultData result = new resultData();
+            string[] result1 = new string[4]; // I would make this a model like
             /*
              class Championship {
                 string championship
@@ -120,6 +121,14 @@ namespace J70Manager.Forms
                         success = convertYear(ref result, yearCode);
                         if (success)
                         {
+                            if (TBCode.Text.Length > 5)
+                            {
+                                result.imageNumber = TBCode.Text.Substring(5);
+                            }
+                            else
+                            {
+                                result.imageNumber = "";
+                            }
                             outputResult(result);
                         }
                     }
@@ -131,188 +140,194 @@ namespace J70Manager.Forms
             }
         }
 
-        private void outputResult(string[] result)
+        private void outputResult(resultData result)
         {
-            TBChampionship.Text = result[0];
-            TBTrack.Text = result[1];
-            TBMonth.Text = result[2];
-            TBYear.Text = result[3];
+            TBChampionship.Text = result.championship;
+            TBTrack.Text = result.track;
+            TBMonth.Text = result.month;
+            TBYear.Text = result.year;
+            TBImage.Text = result.imageNumber;
 
-            if (TBCode.Text.Length > 5)
-            {
-                TBImage.Text = TBCode.Text.Substring(5);
-            }
         }
 
         //maybe add a map for following methods
-        private bool convertChampionship(ref string[] result, string championship)
+        private bool convertChampionship(ref resultData result, string championship)
         {
             switch (championship)
             {
                 case "1":
-                    result[0] = "BTCC";
+                    result.championship = "BTCC";
                     return true;
                 case "2":
-                    result[0] = "British GT";
+                    result.championship = "British GT";
                     return true;
                 case "3":
-                    result[0] = "GT Cup";
+                    result.championship = "GT Cup";
                     return true;
                 case "4":
-                    result[0] = "British Endurance";
+                    result.championship = "British Endurance";
                     return true;
                 case "5":
-                    result[0] = "World GT";
+                    result.championship = "World GT";
                     return true;
                 case "6":
-                    result[0] = "F1";
+                    result.championship = "F1";
                     return true;
                 case "7":
-                    result[0] = "WEC";
+                    result.championship = "WEC";
                     return true;
                 case "0":
-                    result[0] = "Other";
+                    result.championship = "Other";
                     return true;
                 default:
                     return false;
             }
         }
 
-        private int convertTrack(ref string[] result, string track)
+        private bool convertTrack(ref resultData result, string track)
         {
             switch (track)
             {
                 case "1":
-                    result[1] = "Brands Hatch";
+                    result.track = "Brands Hatch";
                     return true;
                 case "2":
-                    result[1] = "Donington Park";
+                    result.track = "Donington Park";
                     return true;
                 case "3":
-                    result[1] = "Oulton Park";
+                    result.track = "Oulton Park";
                     return true;
                 case "4":
-                    result[1] = "Snetterton";
+                    result.track = "Snetterton";
                     return true;
                 case "5":
-                    result[1] = "Silverstone";
+                    result.track = "Silverstone";
                     return true;
                 case "6":
-                    result[1] = "Cadwell";
+                    result.track = "Cadwell";
                     return true;
                 case "7":
-                    result[1] = "Thruxton";
+                    result.track = "Thruxton";
                     return true;
                 case "8":
-                    result[1] = "Croft";
+                    result.track = "Croft";
                     return true;
                 case "9":
-                    result[1] = "Knockhill";
+                    result.track = "Knockhill";
                     return true;
                 case "0":
-                    result[1] = "Other / Outside Uk";
+                    result.track = "Other / Outside Uk";
                     return true;
                 default:
                     return false;
             }
         }
 
-        private int convertMonth(ref string[] result, string month)
+        private bool convertMonth(ref resultData result, string month)
         {
 
             switch (month)
             {
                 case "A":
-                    result[2] = "January";
+                    result.month = "January";
                     return true;
                 case "B":
-                    result[2] = "February";
+                    result.month = "February";
                     return true;
                 case "C":
-                    result[2] = "March";
+                    result.month = "March";
                     return true;
                 case "D":
-                    result[2] = "April";
+                    result.month = "April";
                     return true;
                 case "E":
-                    result[2] = "May";
+                    result.month = "May";
                     return true;
                 case "F":
-                    result[2] = "June";
+                    result.month = "June";
                     return true;
                 case "G":
-                    result[2] = "July";
+                    result.month = "July";
                     return true;
                 case "H":
-                    result[2] = "August";
+                    result.month = "August";
                     return true;
                 case "I":
-                    result[2] = "September";
+                    result.month = "September";
                     return true;
                 case "J":
-                    result[2] = "October";
+                    result.month = "October";
                     return true;
                 case "K":
-                    result[2] = "November ";
+                    result.month = "November ";
                     return true;
                 case "L":
-                    result[2] = "December";
+                    result.month = "December";
                     return true;
                 default:
                     return false;
             }
         }
 
-        private int convertYear(ref string[] result, string year)
+        private bool convertYear(ref resultData result, string year)
         {
 
             switch (year)
             {
                 case "22":
-                    result[3] = "2022";
+                    result.year = "2022";
                     return true;
                 case "23":
-                    result[3] = "2023";
+                    result.year = "2023";
                     return true;
                 case "24":
-                    result[3] = "2024";
+                    result.year = "2024";
                     return true;
                 case "25":
-                    result[3] = "2025";
+                    result.year = "2025";
                     return true;
                 case "26":
-                    result[3] = "2026";
+                    result.year = "2026";
                     return true;
                 case "27":
-                    result[3] = "2027";
+                    result.year = "2027";
                     return true;
                 case "28":
-                    result[3] = "2028";
+                    result.year = "2028";
                     return true;
                 case "29":
-                    result[3] = "2029";
+                    result.year = "2029";
                     return true;
                 case "30":
-                    result[3] = "2030";
+                    result.year = "2030";
                     return true;
                 case "31":
-                    result[3] = "2031";
+                    result.year = "2031";
                     return true;
                 case "32":
-                    result[3] = "2032";
+                    result.year = "2032";
                     return true;
                 case "33":
-                    result[3] = "2033";
+                    result.year = "2033";
                     return true;
                 case "34":
-                    result[3] = "2034";
+                    result.year = "2034";
                     return true;
                 case "35":
-                    result[3] = "2035";
+                    result.year = "2035";
                     return true;
                 default:
                     return false;
             }
         }
+    }
+
+    class resultData
+    {
+        public string championship;
+        public string track;
+        public string month;
+        public string year;
+        public string imageNumber;
     }
 }
