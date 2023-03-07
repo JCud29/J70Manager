@@ -100,6 +100,7 @@
             this.BtnGenerate.TabIndex = 28;
             this.BtnGenerate.Text = "Generate Image Code";
             this.BtnGenerate.UseVisualStyleBackColor = false;
+            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // TBCode
             // 
@@ -108,9 +109,10 @@
             this.TBCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBCode.Location = new System.Drawing.Point(47, 250);
             this.TBCode.Name = "TBCode";
-            this.TBCode.ReadOnly = true;
             this.TBCode.Size = new System.Drawing.Size(299, 30);
             this.TBCode.TabIndex = 27;
+            this.TBCode.Enter += new System.EventHandler(this.TBCode_Enter);
+            this.TBCode.Leave += new System.EventHandler(this.TBCode_Leave);
             // 
             // LblCode
             // 
