@@ -95,17 +95,6 @@ namespace J70Manager.Forms
             string monthCode = code.Substring(2, 1).ToUpper();
             string yearCode = code.Substring(3, 2);
             resultData result = new resultData();
-            string[] result1 = new string[4]; // I would make this a model like
-            /*
-             class Championship {
-                string championship
-                string track
-                etc...
-             }
-
-
-             its much more readable than an array
-            */
 
             bool success = false;
 
@@ -147,6 +136,25 @@ namespace J70Manager.Forms
             TBMonth.Text = result.month;
             TBYear.Text = result.year;
             TBImage.Text = result.imageNumber;
+            AddCodeToPrevious(result);
+        }
+        private void AddCodeToPrevious(resultData result)
+        {
+            StringBuilder previousBuilder = new StringBuilder(TBCode.Text.ToUpper());
+            previousBuilder.Append(" - ").Append(result.championship).Append(", ").Append(result.track);
+            string abrMonth = result.month.Substring(0, 3);
+            string abrYear = result.year.Substring(2);
+            previousBuilder.Append(", ").Append(abrMonth).Append(", ").Append(abrYear);
+
+            _previousCodes.RemoveAt(17);
+            _previousCodes.Insert(0, previousBuilder.ToString());
+            LBPrevious.Items.RemoveAt(17);
+            LBPrevious.Items.Insert(0, previousBuilder.ToString());
+
+            int successCode = _fileClient.WriteToTextFile(_codesUrl, _previousCodes);
+            if (successCode == -1)
+                MessageBox.Show("Unable to write to file, Code not saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
         }
 

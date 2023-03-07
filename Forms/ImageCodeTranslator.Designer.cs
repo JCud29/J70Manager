@@ -71,7 +71,7 @@
             "16",
             "17",
             "18"});
-            this.LBPrevious.Location = new System.Drawing.Point(838, 80);
+            this.LBPrevious.Location = new System.Drawing.Point(856, 83);
             this.LBPrevious.Name = "LBPrevious";
             this.LBPrevious.Size = new System.Drawing.Size(439, 418);
             this.LBPrevious.TabIndex = 30;
@@ -81,7 +81,7 @@
             this.LblPrevious.AutoSize = true;
             this.LblPrevious.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.LblPrevious.Location = new System.Drawing.Point(834, 45);
+            this.LblPrevious.Location = new System.Drawing.Point(852, 48);
             this.LblPrevious.Name = "LblPrevious";
             this.LblPrevious.Size = new System.Drawing.Size(146, 22);
             this.LblPrevious.TabIndex = 29;
@@ -130,7 +130,7 @@
             this.TBImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.TBImage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.TBImage.Location = new System.Drawing.Point(474, 461);
+            this.TBImage.Location = new System.Drawing.Point(477, 471);
             this.TBImage.Name = "TBImage";
             this.TBImage.ReadOnly = true;
             this.TBImage.Size = new System.Drawing.Size(299, 30);
@@ -141,7 +141,7 @@
             this.LblImage.AutoSize = true;
             this.LblImage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.LblImage.Location = new System.Drawing.Point(470, 436);
+            this.LblImage.Location = new System.Drawing.Point(473, 446);
             this.LblImage.Name = "LblImage";
             this.LblImage.Size = new System.Drawing.Size(144, 22);
             this.LblImage.TabIndex = 24;
@@ -152,7 +152,7 @@
             this.LblYear.AutoSize = true;
             this.LblYear.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.LblYear.Location = new System.Drawing.Point(470, 337);
+            this.LblYear.Location = new System.Drawing.Point(473, 347);
             this.LblYear.Name = "LblYear";
             this.LblYear.Size = new System.Drawing.Size(51, 22);
             this.LblYear.TabIndex = 23;
@@ -163,7 +163,7 @@
             this.LblMonth.AutoSize = true;
             this.LblMonth.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.LblMonth.Location = new System.Drawing.Point(470, 241);
+            this.LblMonth.Location = new System.Drawing.Point(473, 251);
             this.LblMonth.Name = "LblMonth";
             this.LblMonth.Size = new System.Drawing.Size(65, 22);
             this.LblMonth.TabIndex = 21;
@@ -174,7 +174,7 @@
             this.LblTrack.AutoSize = true;
             this.LblTrack.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.LblTrack.Location = new System.Drawing.Point(470, 139);
+            this.LblTrack.Location = new System.Drawing.Point(473, 149);
             this.LblTrack.Name = "LblTrack";
             this.LblTrack.Size = new System.Drawing.Size(58, 22);
             this.LblTrack.TabIndex = 19;
@@ -185,7 +185,7 @@
             this.LblChampionship.AutoSize = true;
             this.LblChampionship.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblChampionship.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.LblChampionship.Location = new System.Drawing.Point(470, 40);
+            this.LblChampionship.Location = new System.Drawing.Point(473, 50);
             this.LblChampionship.Name = "LblChampionship";
             this.LblChampionship.Size = new System.Drawing.Size(138, 22);
             this.LblChampionship.TabIndex = 17;
@@ -196,7 +196,7 @@
             this.TBYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.TBYear.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.TBYear.Location = new System.Drawing.Point(474, 362);
+            this.TBYear.Location = new System.Drawing.Point(477, 372);
             this.TBYear.Name = "TBYear";
             this.TBYear.ReadOnly = true;
             this.TBYear.Size = new System.Drawing.Size(299, 30);
@@ -207,7 +207,7 @@
             this.TBMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.TBMonth.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.TBMonth.Location = new System.Drawing.Point(474, 266);
+            this.TBMonth.Location = new System.Drawing.Point(477, 276);
             this.TBMonth.Name = "TBMonth";
             this.TBMonth.ReadOnly = true;
             this.TBMonth.Size = new System.Drawing.Size(299, 30);
@@ -218,7 +218,7 @@
             this.TBTrack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.TBTrack.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.TBTrack.Location = new System.Drawing.Point(474, 164);
+            this.TBTrack.Location = new System.Drawing.Point(477, 174);
             this.TBTrack.Name = "TBTrack";
             this.TBTrack.ReadOnly = true;
             this.TBTrack.Size = new System.Drawing.Size(299, 30);
@@ -229,7 +229,7 @@
             this.TBChampionship.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.TBChampionship.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBChampionship.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.TBChampionship.Location = new System.Drawing.Point(474, 65);
+            this.TBChampionship.Location = new System.Drawing.Point(477, 75);
             this.TBChampionship.Name = "TBChampionship";
             this.TBChampionship.ReadOnly = true;
             this.TBChampionship.Size = new System.Drawing.Size(299, 30);
