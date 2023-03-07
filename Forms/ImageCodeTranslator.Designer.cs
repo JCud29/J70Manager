@@ -132,6 +132,7 @@
             this.TBImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBImage.Location = new System.Drawing.Point(474, 461);
             this.TBImage.Name = "TBImage";
+            this.TBImage.ReadOnly = true;
             this.TBImage.Size = new System.Drawing.Size(299, 30);
             this.TBImage.TabIndex = 25;
             // 
@@ -197,6 +198,7 @@
             this.TBYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBYear.Location = new System.Drawing.Point(474, 362);
             this.TBYear.Name = "TBYear";
+            this.TBYear.ReadOnly = true;
             this.TBYear.Size = new System.Drawing.Size(299, 30);
             this.TBYear.TabIndex = 31;
             // 
@@ -207,6 +209,7 @@
             this.TBMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBMonth.Location = new System.Drawing.Point(474, 266);
             this.TBMonth.Name = "TBMonth";
+            this.TBMonth.ReadOnly = true;
             this.TBMonth.Size = new System.Drawing.Size(299, 30);
             this.TBMonth.TabIndex = 32;
             // 
@@ -217,6 +220,7 @@
             this.TBTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBTrack.Location = new System.Drawing.Point(474, 164);
             this.TBTrack.Name = "TBTrack";
+            this.TBTrack.ReadOnly = true;
             this.TBTrack.Size = new System.Drawing.Size(299, 30);
             this.TBTrack.TabIndex = 33;
             // 
@@ -227,6 +231,7 @@
             this.TBChampionship.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.TBChampionship.Location = new System.Drawing.Point(474, 65);
             this.TBChampionship.Name = "TBChampionship";
+            this.TBChampionship.ReadOnly = true;
             this.TBChampionship.Size = new System.Drawing.Size(299, 30);
             this.TBChampionship.TabIndex = 34;
             // 

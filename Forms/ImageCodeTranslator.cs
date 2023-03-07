@@ -83,7 +83,7 @@ namespace J70Manager.Forms
         private void convertCode()
         {
             //maybe change to char array
-            string code = TBCode.Text.ToString();
+            string code = TBCode.Text;
             string championshipCode = code.Substring(0, 1);
             string trackCode = code.Substring(1, 1);
             string monthCode = code.Substring(2, 1).ToUpper();
@@ -134,6 +134,11 @@ namespace J70Manager.Forms
             TBTrack.Text = result[1];
             TBMonth.Text = result[2];
             TBYear.Text = result[3];
+
+            if (TBCode.Text.Length > 5)
+            {
+                TBImage.Text = TBCode.Text.Substring(5);
+            }
         }
 
         //maybe add a map for following methods
